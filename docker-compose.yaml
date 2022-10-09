@@ -1,0 +1,21 @@
+services:
+    vault:
+        build:
+            context: ./vault
+        container_name: vault
+        command: server
+            -config=/vault/config/vault-config.hcl
+        cap_add:
+            - IPC_LOCK
+        env_file:
+            - vault/.env
+        expose:
+            - 8200
+        volumes:
+            - vault_data:/vault/file
+            - vault_logs:/vault/logs
+
+
+volumes:
+    vault_data:
+    vault_logs:

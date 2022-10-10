@@ -3,6 +3,6 @@ vault secrets enable -path=app_config kv
 
 # Создаём все необходимые приложению ключи
 
-# Ключи для RabbitMQ
+# Demo секреты нашего приложения.
 vault kv put app_config/app_host value=app_host
 vault kv put app_config/app_port value=696969

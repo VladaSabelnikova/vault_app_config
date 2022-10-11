@@ -3,7 +3,7 @@
 
 Получение переменных (хоста и порта) из Vault.
 Обратите внимание, хост может иметь разные значения,
-в зависимости от DEV_MODE константы src/config/settings.py (12 строка).
+в зависимости от DEV_MODE=True/False константы src/config/settings.py.
 """
 from src.config.settings import config
 

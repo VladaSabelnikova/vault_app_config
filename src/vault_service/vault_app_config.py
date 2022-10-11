@@ -3,9 +3,10 @@ from logging import getLogger
 from typing import Optional
 
 import hvac
-from src.vault_service.env_config import env
-from src.vault_service.abstract_classes import AbstractAppConfig
+
 from src.utils.exceptions_handler import exceptions_handler
+from src.vault_service.abstract_classes import AbstractAppConfig
+from src.vault_service.env_config import env
 
 
 class VaultAppConfig(AbstractAppConfig):
@@ -45,4 +46,4 @@ class VaultAppConfig(AbstractAppConfig):
         return response['data']['value']
 
 
-logger = getLogger(__name__)
+logger = getLogger('vault_app_config')

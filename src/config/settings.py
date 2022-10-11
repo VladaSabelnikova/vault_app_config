@@ -1,7 +1,10 @@
 """Модуль содержит настройки приложения."""
 
+from logging import config as logging_config
+
 from pydantic import BaseSettings
 
+from src.config.logging_settings import LOGGING
 from src.vault_service.env_config import env
 from src.vault_service.vault_app_config import VaultAppConfig
 from src.vault_service.vault_client import client
@@ -11,6 +14,7 @@ from src.vault_service.vault_client import client
 # меняя хосты контейнеров
 DEV_MODE = False
 
+logging_config.dictConfig(LOGGING)
 vault = VaultAppConfig(vault_client=client, app_name=env.vault_app_name, dev_mode=DEV_MODE)
 
 
